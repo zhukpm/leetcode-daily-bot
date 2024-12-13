@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>LeetCode Daily</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="LeetCode Daily">
+    <link rel="icon" type="image/x-icon" href="https://cdn.glitch.global/a476c59c-c80a-4732-8766-26dd79f9d8a4/favicon.ico?v=1682887955311">
+    
+    <script type="text/javascript" src="https://unpkg.com/tabulator-tables@6.2.5/dist/js/tabulator.min.js"></script>
+    <script type="text/javascript" src="/static/index.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic">
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://unpkg.com/tabulator-tables@6.2.5/dist/css/tabulator_materialize.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="transparent">
+      <a href="/" class="brand"><span>LeetCode Daily</span></a>
+      <div class="menu"><a id="toggle-dark-mode" class="pseudo button">Dark mode</a></div>
+    </nav>
+
+      <section id="participants" class="visual">
+          <div class="content">
+            <div id="players"></div>
+          </div>
+      </section>
+
+    <script>
+       window.onload = () => {
+         document.getElementById("toggle-dark-mode").onclick = toggle_dark_mode;
+         init_participants_table(
+           {{participants | tojson}}
+         );
+       }
+    </script>
+    
+  </body>
+</html>

@@ -1,0 +1,244 @@
+:root {
+  --font-color: #424242;
+  --bg-color: #ffffff;
+  --secondary-color: #DDDDDD;
+  --hero-bg: #55aef9;
+  --hero-font: #424242;
+}
+
+[data-theme="dark"] {
+  --font-color: #e0e0e0; /* Pale Pearl */
+  --bg-color: #2c2c34;   /* Deep Slate */
+  --secondary-color: #7d8491; /* Dusty Blue */
+  --hero-bg: #405d74;    /* Muted Ocean Blue */
+  --hero-font: #e0e0e0;  /* Pale Pearl */
+}
+
+div.tabulator {
+  background-color: var(--bg-color) !important;
+}
+
+.tabulator div {
+  color: var(--font-color) !important;
+  border-color: rgba(170,170,170,.2) !important;
+}
+
+.tabulator div.tabulator-row-even {
+  background-color: var(--secondary-color) !important;
+}
+
+.tabulator div.tabulator-row-odd {
+  background-color: var(--bg-color) !important;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--font-color);
+}
+
+nav {
+  position: absolute;
+  background-color: var(--bg-color);
+}
+
+input {
+  background-color: var(--bg-color);
+}
+
+main {
+  padding-bottom: 40px;
+  margin: 0 20px 40px 20px;
+}
+
+.visual {
+  text-align: left;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 80px 20px 0 20px;
+}
+
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 15vh;
+    transition: height 999999s;
+    text-align: center;
+    min-height: 200px;
+    color: var(--hero-font);
+    padding: 1px 0;
+    background: var(--hero-bg) url("/img/optimised.svg") no-repeat 50% center scroll;
+    background-size: cover
+}
+
+.hero .content {
+    position: relative;
+    top: 45%;
+    transform: translateY(-50%)
+}
+
+.hero h1 {
+    font-size: 3em;
+    line-height: 1;
+    padding: 0
+}
+
+.hero p {
+    margin: 0
+}
+
+.hero .slogan {
+    font-size: 1.3em
+}
+
+.hero .npm {
+    max-width: 720px;
+    color: #333;
+    margin-bottom: 0;
+    text-align: center;
+    border-radius: 0;
+    margin: 1.3em auto .3em
+}
+
+.hero .npm.slim,.hero .npm.wide {
+    display: none
+}
+
+@media(max-width: 700px) {
+    .hero .npm.slim {
+        display:block;
+        max-width: 500px
+    }
+}
+
+@media(min-width: 700px) {
+    .hero .npm.wide {
+        display:block
+    }
+}
+
+.hero .links a {
+    color: #333;
+    box-shadow: 0 2px rgba(0,0,0,.2);
+    transition: all .3s
+}
+
+.hero .links a:hover {
+    box-shadow: 0 2px #333
+}
+
+.hero .links a:active {
+    background: none;
+    border-radius: 0
+}
+
+@keyframes bounce {
+    from {
+        bottom: 20px
+    }
+
+    70% {
+        bottom: 10px
+    }
+
+    to {
+        bottom: 20px
+    }
+}
+
+.transparent~.hero .keepgoing {
+    opacity: 1
+}
+
+@media all and (max-width: 960px) {
+    .hero {
+        background-attachment:scroll
+    }
+}
+
+nav.transparent {
+    box-shadow: none;
+    background: none;
+}
+
+
+
+.calendar {
+  display: flex;
+  gap: 5px;
+}
+
+.week {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  float: left;
+  padding: 2px;
+}
+
+.week:last-child {
+  padding-right: 20px;
+}
+
+#players .day {
+  width: 15px;
+  height: 15px;
+  background-color: #ebedf0;
+  border-radius: 2px;
+  position: relative; /* Necessary to position the popup properly */
+
+}
+
+#players .day a {
+  display: none; /* Hide the text (link) by default */
+  position: absolute; /* Position the popup absolutely relative to the day div */
+  top: -150%; /* Place it just below the day cell */
+  left: 50%; /* Start it from the center horizontally */
+  transform: translateX(-50%); /* Move it back by 50% of its width to center it */
+  background-color: white;
+  padding: 2px 5px;
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+  white-space: nowrap; /* Ensure the text doesn't wrap */
+  font-size: 12px;
+  z-index: 10;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for popup effect */
+}
+
+#players .day:hover a {
+  z-index: 10;
+  display: block; /* Show the text (link) on hover */
+}
+
+#players .level-0 {
+  background-color: #ebedf0;
+}
+
+#players .level-1 {
+  background-color: #c6e48b;
+}
+
+#players .level-2 {
+  background-color: #7bc96f;
+}
+
+#players .level-3 {
+  background-color: #239a3b;
+}
+
+#players .level-4 {
+  background-color: #196127;
+}
+
+#players .level-invisible {
+  background-color: transparent;
+}
+
+#players.tabulator,
+#players .tabulator-table,
+#players .tabulator-tableholder,
+#players .tabulator-row,
+#players .tabulator-cell {
+  overflow: visible;
+}
